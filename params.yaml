@@ -1,0 +1,6 @@
+preprocess:
+  fill_method: "ffill"
+train:
+  model_type: "RandomForest"
+  n_estimators: 100
+  random_state: 42

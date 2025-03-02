@@ -1,0 +1,50 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/data/preprocess.py
+    deps:
+    - path: data/raw/heart_attack_prediction_india.csv
+      hash: md5
+      md5: 5f3312a4a26072f0698600b871c6adb6
+      size: 850422
+    - path: src/data/preprocess.py
+      hash: md5
+      md5: da78b6ea152b93119775549e22941b8b
+      size: 4431
+    outs:
+    - path: data/processed/heart_attack_data.csv
+      hash: md5
+      md5: 0b0e990fe8960f09ee4319278c65d303
+      size: 5509197
+  train:
+    cmd: python src/models/train_model.py
+    deps:
+    - path: data/processed/heart_attack_data.csv
+      hash: md5
+      md5: 0b0e990fe8960f09ee4319278c65d303
+      size: 5509197
+    - path: src/models/train_model.py
+      hash: md5
+      md5: 307f2220e3aac1aaaa89567e7f7187a6
+      size: 6457
+    outs:
+    - path: models/rf_model.pkl
+      hash: md5
+      md5: cdd8d5eb5529f53b9dc08b8a3a9434fd
+      size: 27318810
+  visualize:
+    cmd: python src/visualization/visualize.py
+    deps:
+    - path: models/rf_model.pkl
+      hash: md5
+      md5: cdd8d5eb5529f53b9dc08b8a3a9434fd
+      size: 27318810
+    - path: src/visualization/visualize.py
+      hash: md5
+      md5: 890e5b9c990815327b9c6de5b08beb1a
+      size: 2094
+    outs:
+    - path: plots/feature_importance.png
+      hash: md5
+      md5: e0ec61370d9f0adbd9a59f4ea15f6680
+      size: 20839

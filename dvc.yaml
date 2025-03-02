@@ -1,0 +1,24 @@
+stages:
+  preprocess:
+    cmd: python src/data/preprocess.py
+    deps:
+      - data/raw/heart_attack_prediction_india.csv
+      - src/data/preprocess.py
+    outs:
+      - data/processed/heart_attack_data.csv
+
+  train:
+    cmd: python src/models/train_model.py
+    deps:
+      - data/processed/heart_attack_data.csv
+      - src/models/train_model.py
+    outs:
+      - models/rf_model.pkl
+
+  visualize:
+    cmd: python src/visualization/visualize.py
+    deps:
+      - models/rf_model.pkl
+      - src/visualization/visualize.py
+    outs:
+      - plots/feature_importance.png
