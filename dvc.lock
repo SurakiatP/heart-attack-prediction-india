@@ -9,8 +9,8 @@ stages:
       size: 850422
     - path: src/data/preprocess.py
       hash: md5
-      md5: 31fb54130e85bd6c538de23431d06a4f
-      size: 2542
+      md5: d2a0b2ae09a6d46062212fe8ec7f0685
+      size: 2527
     outs:
     - path: data/processed/heart_attack_data.csv
       hash: md5

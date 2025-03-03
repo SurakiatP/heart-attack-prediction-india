@@ -43,7 +43,6 @@ def preprocess_data(df):
     return processed_array, preprocessor
 
 if __name__ == "__main__":
-    import os
     file_path = os.path.join("data", "raw", "heart_attack_prediction_india.csv")
     df = load_data(file_path)
     processed_data, preprocessor = preprocess_data(df)

@@ -11,12 +11,11 @@ def load_data(filename="heart_attack_prediction_india.csv"):
     Returns:
         DataFrame: Loaded data as a pandas DataFrame.
     """
-    # ถ้าไฟล์ที่ระบุมีอยู่ใน path ที่ให้มา ให้โหลดตรงนั้น
+
     if os.path.exists(filename):
         print(f"Loading from provided file path: {os.path.abspath(filename)}")
         return pd.read_csv(filename)
     
-    # ถ้าไม่พบ ให้สมมุติว่าเป็น filename ที่อยู่ใน data/raw จาก root ของโปรเจค
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
     data_path = os.path.join(project_root, "data", "raw", filename)
     print(f"Looking for file at: {data_path}")
