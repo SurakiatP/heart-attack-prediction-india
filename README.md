@@ -34,7 +34,6 @@ Heart_Attack_Prediction/
 │── README.md                 # Project documentation
 ```
 
----
 
 ---
 
@@ -86,7 +85,6 @@ The trained model is logged and tracked using **MLflow**.
 
 ---
 
----
 
 ## **⚙️ Installation**
 Clone this repository and set up a virtual environment:
