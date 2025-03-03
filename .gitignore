@@ -1,26 +1,20 @@
-# Virtual environment directory
 venv/
 .env
 env/
 
-# Python cache files
 __pycache__/
 *.py[cod]
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# MLflow tracking directory (ถ้าไม่ต้องการ commit run logs)
 mlruns/
 
-# Data filesที่ใหญ่เกินไป (ที่ถูกจัดการโดย DVC)
 data/raw/*
 !data/raw/*.dvc
 
-# Output หรือ processed files ที่สามารถสร้างใหม่ได้ (DVC จะ track .dvc files แทน)
 data/processed/*
 
-# Model artifacts (ถ้าโมเดลสามารถ recreate ได้)
 models/*
 
 # Log files
