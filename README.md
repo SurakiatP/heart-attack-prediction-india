@@ -36,6 +36,56 @@ Heart_Attack_Prediction/
 
 ---
 
+## **📌 Feature Descriptions**
+This project uses patient data with the following features:
+
+| Feature | Description |
+|---------|------------|
+| `Age` | Age of the patient |
+| `Gender` | Gender (Male/Female) |
+| `Diabetes` | Whether the patient has diabetes (0 = No, 1 = Yes) |
+| `Hypertension` | Whether the patient has hypertension (0 = No, 1 = Yes) |
+| `Obesity` | Obesity status (0 = No, 1 = Yes) |
+| `Smoking` | Smoking habits (0 = No, 1 = Yes) |
+| `Alcohol_Consumption` | Alcohol consumption (0 = No, 1 = Yes) |
+| `Physical_Activity` | Level of physical activity |
+| `Diet_Score` | Score representing diet quality |
+| `Cholesterol_Level` | Measured cholesterol level |
+| `LDL_Level` | Low-density lipoprotein (LDL) cholesterol level |
+| `HDL_Level` | High-density lipoprotein (HDL) cholesterol level |
+| `Systolic_BP` | Systolic blood pressure level |
+| `Diastolic_BP` | Diastolic blood pressure level |
+| `Air_Pollution_Exposure` | Level of air pollution exposure |
+| `Family_History` | Family history of heart disease (0 = No, 1 = Yes) |
+| `Stress_Level` | Stress level score |
+| `Healthcare_Access` | Access to healthcare services (0 = No, 1 = Yes) |
+| `Heart_Attack_History` | Previous history of heart attack (0 = No, 1 = Yes) |
+| `Emergency_Response_Time` | Time taken for emergency response |
+| `Annual_Income` | Annual income of the patient |
+| `Health_Insurance` | Whether the patient has health insurance (0 = No, 1 = Yes) |
+| `Heart_Attack_Risk` | Target variable: Predicted risk of heart attack (0 = Low, 1 = High) |
+
+---
+
+## **🧠 Model Used**
+This project utilizes a **Random Forest Classifier** as the primary model for heart attack risk prediction. 
+
+### **Why Random Forest?**
+- Handles both categorical and numerical data efficiently
+- Reduces overfitting compared to a single decision tree
+- Provides feature importance insights
+- Works well with imbalanced datasets
+
+Hyperparameters used:
+- `n_estimators`: 100
+- `random_state`: 42
+
+The trained model is logged and tracked using **MLflow**.
+
+---
+
+---
+
 ## **⚙️ Installation**
 Clone this repository and set up a virtual environment:
 ```bash
@@ -186,4 +236,5 @@ This README provides an **overview** of the **project structure, pipeline stages
 It also includes **step-by-step instructions** for **running the pipeline, tracking experiments, and deploying the model**.  
 
 🔥 **Now you can use this as a solid documentation for your project!** 🔥
+
 
