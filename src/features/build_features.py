@@ -20,8 +20,10 @@ def build_features(df):
         DataFrame: DataFrame with new features.
     """
 
+    df_feature = df.drop(columns=["Patient_ID", "State_Name", "Emergency_Response_Time", "Annual_Income"])
+    df_features["Age_Hypertension"] = df_features["Age"] * df_feature["Hypertension"]
 
-    "clean_data ตรงนี้เด้อ"
+    return df_feature
 
 if __name__ == "__main__":
     df = load_data()  # Load data using the correct function
