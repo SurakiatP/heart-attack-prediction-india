@@ -36,41 +36,6 @@ Heart_Attack_Prediction/
 
 ---
 
-## **Pipeline Summary**
-
-Below is an overview of the workflow and stages defined in `dvc.yaml` for the **Heart Attack Prediction** project:
-
-1. **Preprocessing** (Stage `preprocess` in `dvc.yaml`):
-   - Reads `data/raw/heart_attack_prediction_india.csv`
-   - Cleans, scales, and encodes the data
-   - Outputs `data/processed/heart_attack_data.csv`
-
-2. **Train** (Stage `train`):
-   - Reads `data/processed/heart_attack_data.csv`
-   - Applies feature engineering (e.g., `build_features.py`)
-   - Trains a **RandomForestClassifier** model
-   - Saves the trained model as `models/rf_model.pkl`
-
-3. **Visualize** (Stage `visualize`):
-   - Loads the model from `models/rf_model.pkl`
-   - Generates visualization artifacts (e.g., `plots/feature_importance.png`)
-
-4. **(Optional) Evaluate or Predict**
-   - **Evaluate**: Uses `evaluate_model.py` to measure performance metrics (accuracy, confusion matrix, etc.)
-   - **Predict**: Uses `predict.py` with new/unseen data to obtain risk predictions
-
-5. **(Optional) Deploy**
-   - Runs `app.py` (Flask server)
-   - Exposes a `/predict` endpoint to receive JSON input and respond with prediction results
-
-**Workflow Recap**:
-- **`preprocess`** → Creates a processed dataset
-- **`train`** → Trains the RandomForest model
-- **`visualize`** → Produces key visualization files
-- **`evaluate`** (optional) → Evaluates the trained model
-- **`predict`** (optional) → Generates predictions on new data
-- **`app.py`** (optional) → Deploys a Flask API for real-time prediction
-
 ---
 
 ## **📌 Feature Descriptions**
@@ -193,6 +158,16 @@ Then visit `http://127.0.0.1:8000/predict` and send a POST request with JSON inp
 | File | Description |
 |------|------------|
 | `app.py` | Flask API for serving predictions |
+
+---
+
+**Workflow Recap**:
+- **`preprocess`** → Creates a processed dataset
+- **`train`** → Trains the RandomForest model
+- **`visualize`** → Produces key visualization files
+- **`evaluate`** (optional) → Evaluates the trained model
+- **`predict`** (optional) → Generates predictions on new data
+- **`app.py`** (optional) → Deploys a Flask API for real-time prediction
 
 ---
 
