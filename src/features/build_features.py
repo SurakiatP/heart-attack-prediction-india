@@ -20,8 +20,14 @@ def build_features(df):
         DataFrame: DataFrame with new features.
     """
 
-    df_feature = df.drop(columns=["Patient_ID", "State_Name", "Emergency_Response_Time", "Annual_Income"])
-    df_features["Age_Hypertension"] = df_features["Age"] * df_feature["Hypertension"]
+    df_feature = df.drop(
+        columns=["Patient_ID", "State_Name", "Emergency_Response_Time", "Annual_Income"],
+        errors="ignore"
+    )
+
+    # create new feature "Age_Hypertension"
+    if "Age" in df_feature.columns and "Hypertension" in df_feature.columns:
+        df_feature["Age_Hypertension"] = df_feature["Age"] * df_feature["Hypertension"]
 
     return df_feature
 
