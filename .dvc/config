@@ -1,0 +1,7 @@
+[core]
+    remote = gdrive_remote
+
+[remote "gdrive_remote"]
+    url = gdrive://1XVLzbkUXcgDMg823Cq4Y8r61iIs08GTG/heart-attack-prediction-india
+    gdrive_use_service_account = true
+    
